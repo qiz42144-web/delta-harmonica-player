@@ -1,5 +1,8 @@
 # 三角洲口琴自动演奏器
 
+[![selftest](https://github.com/qiz42144-web/delta-harmonica-player/actions/workflows/selftest.yml/badge.svg)](https://github.com/qiz42144-web/delta-harmonica-player/actions/workflows/selftest.yml)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 > 当前版本：**v0.4.6** · [下载最新版 exe](https://github.com/qiz42144-web/delta-harmonica-player/releases/latest)
 
 导入 MIDI → 选一条轨道 → **先在电脑上试听** → 点开始（或按 `F6`）→ 切回游戏，倒计时结束后自动吹口琴。
@@ -247,3 +250,7 @@ PyInstaller 打包的未签名 exe 常见误报，加信任即可；也可以直
 （「python 等自动脚本」「鼠标宏」），**在线对局使用有封号风险（含机器码封禁）**。
 本项目不提供任何反检测、绕过反作弊或修改游戏内存的功能。
 请只在练习场、自定义房间、单人场景使用，后果自负。
+
+## 十一、许可证
+
+[MIT](LICENSE)。可以自由使用、修改和再分发，保留版权声明即可。
