@@ -1,0 +1,27 @@
+# 构建产物
+build/
+dist/
+*.spec
+.venv-build/
+
+# Python
+__pycache__/
+*.pyc
+
+# 运行时生成的配置与日志
+config.json
+cli-output.log
+selftest.log
+
+# 工具生成的本地音频
+*.wav
+*.flac
+*.mp3
+
+# 本地曲库不进入公开仓库（只保留说明）
+library/*
+!library/README.md
+
+# 仅用于本机算法实验（含本地样本路径）
+tools/melody_sweep.py
+tools/vocal_sweep.py
