@@ -1,0 +1,26 @@
+name: selftest
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 语法检查
+        run: python -m py_compile main.py smf.py mapping.py synth.py player.py selftest.py
+
+      - name: 逻辑自检（106 项）
+        run: python selftest.py
+
+      - name: 生成演示 MIDI
+        run: python demo_midi.py
