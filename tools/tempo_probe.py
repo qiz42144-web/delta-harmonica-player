@@ -14,6 +14,11 @@ import os
 import sys
 import tempfile
 
+try:  # Windows 控制台默认不是 UTF-8，中文输出会抛 UnicodeEncodeError
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))

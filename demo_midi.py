@@ -1,13 +1,18 @@
 # -*- coding: utf-8 -*-
 """生成测试用 MIDI 文件（不依赖任何第三方库）。
 
-    python tools/make_demo_midi.py            # 生成 demo/小星星.mid
+    python demo_midi.py            # 生成 demo/小星星.mid
 """
 from __future__ import annotations
 
 import os
 import struct
 import sys
+
+try:  # Windows 控制台默认不是 UTF-8，中文输出会抛 UnicodeEncodeError
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 DIVISION = 480
 

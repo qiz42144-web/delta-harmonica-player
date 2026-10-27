@@ -26,6 +26,11 @@ import sys
 import tempfile
 import wave
 
+try:  # Windows 控制台默认不是 UTF-8，中文输出会抛 UnicodeEncodeError
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 import numpy as np
 
 HOP = 256                 # 11.6ms @22050

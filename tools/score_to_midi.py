@@ -24,6 +24,11 @@ import re
 import struct
 import sys
 
+try:  # Windows 控制台默认不是 UTF-8，中文输出会抛 UnicodeEncodeError
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 DEGREE = {"1": 0, "2": 2, "3": 4, "4": 5, "5": 7, "6": 9, "7": 11}
 # 支持 #5 / [#1] / (6)(#5) 这种带升号的写法，也兼容旧的 5* 写法
 TOKEN_RE = re.compile(r"([\(\[]?)\s*(#?)\s*([1-7])\s*([\)\]]?)\s*(\*?)")
